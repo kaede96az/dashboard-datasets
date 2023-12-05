@@ -1134,7 +1134,7 @@
     ],
     "judgment_result": "認定",
     "pre_existing_conditions": [],
-    "reasons_for_repudiation": "",
+    "reasons_for_repudiation": [],
     "remarks": "",
     "source_url": "https://www.mhlw.go.jp/content/10900000/000846886.pdf"
   },
@@ -15657,7 +15657,7 @@
       "高血圧症",
       "心肥大"
     ],
-    "reasons_for_repudiation": "",
+    "reasons_for_repudiation": [],
     "remarks": "",
     "source_url": "https://www.mhlw.go.jp/content/10900000/000968535.pdf"
   },
