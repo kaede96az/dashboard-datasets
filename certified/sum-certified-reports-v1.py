@@ -51,17 +51,43 @@ output_path = os.path.join(output_dir, 'certified-symptoms.json')
 with open( output_path, "w", encoding='utf-8') as f:
     f.write(symptom_summary_list_json_string)
 
+
+# 認定・否認の件数に関して集計を行い、結果をファイルに保存する。
+# 別途PDFから読み取って転記した集計情報も合わせて保存する。
 certified_count = 0
 denied_count = 0
+certified_death_count = 0
+denied_death_count = 0
+
 for item in sorted_reports:
 	if item['judgment_result'] == '認定':
 		certified_count += 1
+		if item['description_of_claim'].find('死') > -1 or item['description_of_claim'].find('葬') > -1:
+			certified_death_count += 1
 	elif item['judgment_result'] == '否認':
 		denied_count += 1
+		if item['description_of_claim'].find('死') > -1 or item['description_of_claim'].find('葬') > -1:
+			denied_death_count += 1
 	else:
 		print(f'[警告] 認定と否認以外の判定結果が抽出されているようです')
 		print(item)
 		print('-'*10)
 
-print(certified_count)
-print(denied_count)
+summary_settings_file_path = 'summary-settings.yaml'
+with open(summary_settings_file_path, "r", encoding='utf-8') as file:
+    summary_settings_root = yaml.safe_load(file)
+summary_settings = summary_settings_root['settings']
+
+certified_summary = {
+	"date": summary_settings['date'],
+	"total_entries": summary_settings['total_entries'],
+	"certified_count": certified_count,
+	"denied_count": denied_count,
+	"certified_death_count": certified_death_count,
+	"denied_death_count": denied_death_count,
+	"pending_count": summary_settings['pending_count']
+}
+certified_summary_json = json.dumps(certified_summary, ensure_ascii=False, indent=2)
+output_path = os.path.join(output_dir, 'certified-summary.json')
+with open( output_path, "w", encoding='utf-8') as f:
+    f.write(certified_summary_json)
