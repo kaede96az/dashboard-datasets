@@ -401,7 +401,7 @@
     "vaccine_name": "新型コロナ",
     "description_of_claim": "死亡一時金・葬祭料",
     "symptoms": [
-      "全身性毛細血管漏出症候群（新型コロナウイルス感染症後）"
+      "全身性毛細血管漏出症候群(新型コロナウイルス感染症後)"
     ],
     "judgment_result": "認定",
     "pre_existing_conditions": [
@@ -694,7 +694,7 @@
     "description_of_claim": "医療費・医療手当",
     "symptoms": [
       "気分不良",
-      "左足関節（外果・後果）骨折",
+      "左足関節(外果・後果)骨折",
       "左足三角靭帯損傷"
     ],
     "judgment_result": "認定",

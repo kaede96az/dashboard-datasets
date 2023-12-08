@@ -814,7 +814,7 @@
     "description_of_claim": "医療費・医療手当",
     "symptoms": [
       "甲状腺機能亢進症",
-      "１型糖尿病"
+      "1型糖尿病"
     ],
     "judgment_result": "認定",
     "pre_existing_conditions": [],
@@ -2860,7 +2860,7 @@
     "vaccine_name": "新型コロナ",
     "description_of_claim": "医療費・医療手当",
     "symptoms": [
-      "１型糖尿病"
+      "1型糖尿病"
     ],
     "judgment_result": "認定",
     "pre_existing_conditions": [],
@@ -2932,9 +2932,9 @@
     "vaccine_name": "新型コロナ",
     "description_of_claim": "医療費・医療手当",
     "symptoms": [
-      "急性発症１型糖尿病",
+      "急性発症1型糖尿病",
       "急性腎不全",
-      "１型糖尿病性高血糖高浸透圧症候群",
+      "1型糖尿病性高血糖高浸透圧症候群",
       "甲状腺機能亢進症"
     ],
     "judgment_result": "認定",
@@ -3076,7 +3076,7 @@
     "vaccine_name": "新型コロナ",
     "description_of_claim": "医療費・医療手当",
     "symptoms": [
-      "１型糖尿病の増悪",
+      "1型糖尿病の増悪",
       "バセドウ病"
     ],
     "judgment_result": "認定",

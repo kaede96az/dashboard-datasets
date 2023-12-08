@@ -600,7 +600,7 @@
     "description_of_claim": "医療費・医療手当",
     "symptoms": [
       "多発関節痛",
-      "両手関節・手指関節・前腕・左足関節～足背痛"
+      "両手関節・手指関節・前腕・左足関節~足背痛"
     ],
     "judgment_result": "認定",
     "pre_existing_conditions": [],
