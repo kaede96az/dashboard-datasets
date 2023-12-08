@@ -1,3 +1,5 @@
+import unicodedata
+
 '''
 認定一覧などを抽出するための処理を集めた実装です。
 '''
@@ -109,7 +111,8 @@ def extract_judgment_result_etc_v1(cell):
 			remarks = ''.join(array[1,:])
 	else:
 		for i in range(0, judgment_index):
-			symptoms.extend(array[i].split('、'))
+			for sym_name in array[i].split('、'):
+				symptoms.append(unicodedata.normalize("NFKC", sym_name))
 		if len(array) > judgment_index + 1:
 			remarks = ''.join(array[judgment_index+1,:])
 		

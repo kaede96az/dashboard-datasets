@@ -1,4 +1,4 @@
-import sys, json, os, traceback, math
+import sys, json, os, traceback, math, unicodedata
 import pandas as pd
 sys.path.append("../libraries")
 from excertified import (
@@ -66,9 +66,10 @@ try:
 		symptoms = []
 		if row['疾病名'] != '':
 			if len(row['疾病名'].split('、')) > 0:
-				symptoms.extend(row['疾病名'].split('、'))
+				for sym_name in row['疾病名'].split('、'):
+					symptoms.append(unicodedata.normalize("NFKC", sym_name))
 			else:
-				symptoms.append(row['疾病名'])
+				symptoms.append(unicodedata.normalize("NFKC", row['疾病名']))
 
 		pre_existing_conditions = []
 		if row['基礎疾患'] != '':
