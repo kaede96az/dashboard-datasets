@@ -78,14 +78,17 @@ with open(summary_settings_file_path, "r", encoding='utf-8') as file:
     summary_settings_root = yaml.safe_load(file)
 summary_settings = summary_settings_root['settings']
 
+open_cases_count = summary_settings['total_entries'] - certified_count - denied_count - summary_settings['pending_count']
+
 certified_summary = {
 	"date": summary_settings['date'],
 	"total_entries": summary_settings['total_entries'],
 	"certified_count": certified_count,
 	"denied_count": denied_count,
+	"pending_count": summary_settings['pending_count'],
+	"open_cases_count": open_cases_count,
 	"certified_death_count": certified_death_count,
 	"denied_death_count": denied_death_count,
-	"pending_count": summary_settings['pending_count']
 }
 certified_summary_json = json.dumps(certified_summary, ensure_ascii=False, indent=2)
 output_path = os.path.join(output_dir, 'certified-summary.json')
