@@ -13,6 +13,8 @@ for file in json_file_list:
 		certified_reports.extend(data)
 
 sorted_reports = sorted(certified_reports, key=lambda issue: issue['certified_date'])
+for index, repo_item in enumerate(sorted_reports):
+	sorted_reports[index] = dict(**{'no': index+1}, **repo_item)
 
 all_reports_json_string = json.dumps(sorted_reports, ensure_ascii=False, indent=2)
 output_path = os.path.join(output_dir, 'certified-reports.json')
