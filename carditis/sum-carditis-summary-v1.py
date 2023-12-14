@@ -1,6 +1,5 @@
-import glob
-import json
-import os
+import glob, json, os
+import yaml
 
 jsonFileList = glob.glob('summary-data/*.json')
 output_dir = '../_datasets'
@@ -21,13 +20,23 @@ myocarditis_sum = sum(myocarditis_list)
 pericarditis_sum = sum(pericarditis_list)
 total_sum = sum([myocarditis_sum, pericarditis_sum])
 
+with open('summary-metadata.yaml', "r", encoding='utf-8') as file:
+    metadata_root = yaml.safe_load(file)
+    
+metadata = metadata_root['metadata']
+
 summary_data = {
 	"carditis_summary": {
+		"date": metadata['summary']['date'],
 		"total": total_sum,
 		"myocarditis": myocarditis_sum,
 		"pericarditis": pericarditis_sum,
+		"source": metadata['summary']['source'],
 	},
-	"carditis_issues_with_vaccine_name": sorted_issues
+	"carditis_issues": {
+        "date": metadata['issues']['date'],
+		"issues_with_vaccine_name": sorted_issues
+	}
 }
 
 json_string = json.dumps(summary_data, ensure_ascii=False, indent=2)
