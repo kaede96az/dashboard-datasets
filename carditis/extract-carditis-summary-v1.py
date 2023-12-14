@@ -28,10 +28,10 @@ pericarditis_count = 0
 for index, table in enumerate(tables):
 	if index == 1:
 		row = __extract_row__(table.df)
-		myocarditis_count = row[3]
+		myocarditis_count = int(row[3])
 	elif index == 2:
 		row = __extract_row__(table.df)
-		pericarditis_count = row[3]
+		pericarditis_count = int(row[3])
 
 issue = {
 	"vaccine_name": vaccine_name,

@@ -12,8 +12,8 @@ for file in jsonFileList:
 	with open(file, "r", encoding='utf-8') as f:
 		data = json.load(f)
 		carditis_issues.append(data)
-		myocarditis_list.append(int(data['myocarditis_count'].replace(',','')))
-		pericarditis_list.append(int(data['pericarditis_count'].replace(',','')))
+		myocarditis_list.append(data['myocarditis_count'])
+		pericarditis_list.append(data['pericarditis_count'])
 
 sorted_issues = sorted(carditis_issues, key=lambda issue: issue['vaccine_name'])
 

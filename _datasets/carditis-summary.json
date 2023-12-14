@@ -7,23 +7,23 @@
   "carditis_issues_with_vaccine_name": [
     {
       "vaccine_name": "コミナティ筋注",
-      "myocarditis_count": "328",
-      "pericarditis_count": "110"
+      "myocarditis_count": 328,
+      "pericarditis_count": 110
     },
     {
       "vaccine_name": "コミナティ筋注5～11歳用",
-      "myocarditis_count": "7",
-      "pericarditis_count": "2"
+      "myocarditis_count": 7,
+      "pericarditis_count": 2
     },
     {
       "vaccine_name": "スパイクバックス筋注",
-      "myocarditis_count": "189",
-      "pericarditis_count": "42"
+      "myocarditis_count": 189,
+      "pericarditis_count": 42
     },
     {
       "vaccine_name": "ヌバキソビッド筋注",
-      "myocarditis_count": "1",
-      "pericarditis_count": "0"
+      "myocarditis_count": 1,
+      "pericarditis_count": 0
     }
   ]
 }
