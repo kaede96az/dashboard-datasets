@@ -2,7 +2,7 @@ import glob, json, os, sys
 import yaml
 sys.path.append("../libraries")
 from exdeath import (
-	create_dict_by_age
+	create_graph_data_list_by_age
 )
 
 jsonFileList = glob.glob('reports-data/*.json')
@@ -40,7 +40,7 @@ with open('summary-metadata.yaml', "r", encoding='utf-8') as file:
     metadata_root = yaml.safe_load(file)
 metadata = metadata_root['metadata']
 
-sum_by_age = create_dict_by_age(sorted_issues)
+sum_by_age = create_graph_data_list_by_age(sorted_issues)
 
 summary_data = {
 	"death_summary_from_reports": {
