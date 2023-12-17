@@ -26,6 +26,10 @@ for file in jsonFileList:
 				continue
 			else:
 				d['no'] = int(dNo)
+				d['vaccinated_dates'] = d['vaccinated_dates'].replace('年', '/').replace('月', '/').replace('日', '')
+				onset_dates = d['onset_dates']
+				for dIndex, day in enumerate(onset_dates):
+					onset_dates[dIndex] = day.replace('年', '/').replace('月', '/').replace('日', '')
 				death_issues.append(d)
 
 # 抽出した事例一覧の保存
