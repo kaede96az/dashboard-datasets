@@ -1,12 +1,8 @@
 import camelot
 import json, traceback, os, sys, copy
 sys.path.append("../libraries")
-from exfuncs import (
-	extract_age_gender,
-	extract_vaccine_name_with_mf,
-	split_normal,
-	extract_PT_names,
-	extract_special_row_over_pages
+from exdeath import (
+	extract_lot_no_etc
 )
 
 pdf_file_name = sys.argv[1]
@@ -29,15 +25,18 @@ try:
 		rowCount = table.df.shape[0]
 		for rowIndex in range(3, rowCount):
 			row = table.df.loc[rowIndex,:]
+
+			gender, vaccinated_dates, onset_dates, lot_no = extract_lot_no_etc(row[2], row[3], row[4], row[5])
+
 			rowData = {
 				"no": row[0],
 				"manufacturer": manufacturer,
 				"vaccine_name": vaccine_name,
 				"age": row[1],
-				"gender": row[2],
-				"vaccinated_dates": row[3],
-				"onset_dates": row[4],
-				"lot_no": row[5],
+				"gender": gender,
+				"vaccinated_dates": vaccinated_dates,
+				"onset_dates": onset_dates,
+				"lot_no": lot_no,
 				"vaccinated_times": row[6],
 				"pre_existing_conditions": row[7].replace('\n',''),
 				"PT_names": row[9].split('\n'),
