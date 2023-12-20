@@ -31,6 +31,7 @@ metadata = metadata_root['metadata']
 summary_data = {
 	"death_summary": {
         "date": metadata['summary']['date'],
+		"source": metadata['summary']['source'],
         "sum_by_evaluation": {
 			"total": total_sum,
 			"alpha": alpha_sum,
