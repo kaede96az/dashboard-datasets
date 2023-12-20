@@ -27,6 +27,14 @@ for file in jsonFileList:
 			else:
 				d['no'] = int(dNo)
 				d['vaccinated_dates'] = d['vaccinated_dates'].replace('年', '/').replace('月', '/').replace('日', '')
+				dAge = d['age']
+				dAge = dAge.split('\n')[0]
+				dAge = dAge.split('※')[0]
+				dAge = dAge.replace('歳', '')
+				if dAge.isdecimal():
+					d['age'] = int(dAge)
+				else:
+					d['age'] = dAge
 				onset_dates = d['onset_dates']
 				for dIndex, day in enumerate(onset_dates):
 					onset_dates[dIndex] = day.replace('年', '/').replace('月', '/').replace('日', '')

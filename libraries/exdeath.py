@@ -82,11 +82,16 @@ def create_graph_data_list_by_age(data):
 			# ワクチンと死亡が否定されているものだけ除外
 			continue
 
-		age_str = d['age'].split('歳')[0]
-		if not age_str.isdecimal():
-			# 年齢が数字に変換できない場合は、計算できないので除外
-			continue
-		generation = select_ages(int(age_str))
+		dAge = d['age']
+		if type(dAge) is str:
+			dAge = dAge.replace('代', '')
+			if dAge.isdecimal():
+				dAge = int(dAge)
+			else:
+				# 年齢が数字でなく変換もできないので除外
+				continue
+
+		generation = select_ages(dAge)
 		if generation in result:
 			result[generation] += 1
 		else:
