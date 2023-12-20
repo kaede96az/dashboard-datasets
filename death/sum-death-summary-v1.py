@@ -12,9 +12,9 @@ for file in jsonFileList:
 	with open(file, "r", encoding='utf-8') as f:
 		data = json.load(f)
 		death_issues.append(data)
-		alpha_list.append(int(data['evaluations']['alpha'].replace(',','')))
-		beta_list.append(int(data['evaluations']['beta'].replace(',','')))
-		gamma_list.append(int(data['evaluations']['gamma'].replace(',','')))
+		alpha_list.append(data['evaluations']['alpha'])
+		beta_list.append(data['evaluations']['beta'])
+		gamma_list.append(data['evaluations']['gamma'])
 
 sorted_issues = sorted(death_issues, key=lambda issue: issue['vaccine_name'])
 

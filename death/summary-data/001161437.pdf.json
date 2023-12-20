@@ -1,8 +1,8 @@
 {
   "vaccine_name": "ヌバキソビッド筋注",
   "evaluations": {
-    "alpha": "0",
-    "beta": "0",
-    "gamma": "3"
+    "alpha": 0,
+    "beta": 0,
+    "gamma": 3
   }
 }

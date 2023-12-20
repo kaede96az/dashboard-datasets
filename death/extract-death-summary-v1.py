@@ -16,9 +16,9 @@ for index, table in enumerate(tables):
 		numbers = { 
 			"vaccine_name": vaccine_name,
 			"evaluations": {
-				"alpha": table.df.iloc[1,1].replace('件',''),
-				"beta": table.df.iloc[2,1].replace('件',''),
-				"gamma": table.df.iloc[3,1].replace('件','')
+				"alpha": int(table.df.iloc[1,1].replace('件','').replace(',', '')),
+				"beta": int(table.df.iloc[2,1].replace('件','').replace(',', '')),
+				"gamma": int(table.df.iloc[3,1].replace('件','').replace(',', ''))
 			}}
 
 json_string = json.dumps(numbers, ensure_ascii=False, indent=2)
