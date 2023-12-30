@@ -14,7 +14,8 @@ def create_graph_by_causal_relationship(issues):
 			else:
 				graph[cr] = 1
 	
-	return graph
+	sorted_list = sorted(graph.items(), key=lambda x: x[1], reverse=True)
+	return dict(sorted_list)
 
 
 def create_graph_severities_of_related(issues):
@@ -35,7 +36,8 @@ def create_graph_severities_of_related(issues):
 			else:
 				graph[sv] = 1
 	
-	return graph
+	sorted_list = sorted(graph.items(), key=lambda x: x[1], reverse=True)
+	return dict(sorted_list)
 
 def create_keys(issues, name):
 	graph = dict()
