@@ -67,6 +67,7 @@ sum_severities_of_related = create_graph_severities_of_related(sorted_issues)
 summary_data = {
 	"medical_institution_summary_from_reports": {
 		"date": metadata['issues']['date'],
+		"total_count": len(sorted_issues),
 		"sum_causal_relationship": sum_causal_relationship,
 		"sum_severities_of_related": sum_severities_of_related
 	}
