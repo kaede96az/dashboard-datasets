@@ -4,10 +4,10 @@ def create_graph_by_causal_relationship(issues):
 	for issue in issues:
 		cr = issue['causal_relationship']
 		if cr == '':
-			if '空白' in graph:
-				graph['空白'] += 1
+			if '(空白)' in graph:
+				graph['(空白)'] += 1
 			else:
-				graph['空白'] = 1
+				graph['(空白)'] = 1
 		else:
 			if cr in graph:
 				graph[cr] += 1
@@ -25,10 +25,10 @@ def create_graph_severities_of_related(issues):
 			continue
 		sv = issue['severity']
 		if sv == '':
-			if '空白' in graph:
-				graph['空白'] += 1
+			if '(空白)' in graph:
+				graph['(空白)'] += 1
 			else:
-				graph['空白'] = 1
+				graph['(空白)'] = 1
 		else:
 			if sv in graph:
 				graph[sv] += 1
@@ -36,3 +36,23 @@ def create_graph_severities_of_related(issues):
 				graph[sv] = 1
 	
 	return graph
+
+def create_keys(issues, name):
+	graph = dict()
+	for issue in issues:
+		v = issue[name]
+		if v == '':
+			v = '(空白)'
+		graph[v] = 1
+	return list(graph.keys())
+
+
+def create_keys_from_array(issues, name):
+	graph = dict()
+	for issue in issues:
+		vArray = issue[name]
+		for v in vArray:
+			if v == '':
+				v = '(空白)'
+			graph[v] = 1
+	return list(graph.keys())
