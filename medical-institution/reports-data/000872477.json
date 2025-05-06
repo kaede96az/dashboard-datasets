@@ -946020,9 +946020,11 @@
       "2021"
     ],
     "days_to_onset": [],
-    "vaccine_name": "コミナティ筋注\nインフルエンザ",
-    "manufacturer": "ファイザー\nKMB",
-    "lot_no": "EX3617\n483A",
+    "vaccine_name": "コミナティ筋注",
+    "manufacturer": "ファイザー",
+    "lot_no": "EX3617",
+    "concurrent_vaccination_flag": true,
+    "concurrent_vaccination": "インフルエンザ;KMB;483A",
     "PT_names": [
       "腎障害|急性腎障害",
       "抗糸球体基底膜抗体病",
